@@ -1,0 +1,607 @@
+export type Lang = "pt" | "en";
+
+export const content = {
+  pt: {
+    nav: {
+      cta: "Agendar Chamada",
+    },
+    hero: {
+      badge: "Infraestrutura de IA para PMEs",
+      headline1: "A tua empresa está",
+      headline2: "a deixar dinheiro",
+      headline3: "na mesa.",
+      sub: "Instalamos o sistema nervoso de IA da tua empresa — para que as pessoas trabalhem menos no operacional e mais no que importa.",
+      cta_primary: "Quero saber mais",
+      cta_secondary: "Ver como funciona",
+      niches: ["Imobiliárias", "Clínicas", "PMEs em Crescimento"],
+      status: "System Online // Agents Ativos",
+      card_real_estate: {
+        label: "Imobiliárias",
+        agent: "Agent Qualificação",
+        metric: "<2min",
+        sub: "Resposta"
+      },
+      card_clinics: {
+        label: "Clínicas",
+        agent: "Agent Marcações",
+        metric: "-30%",
+        sub: "Faltas"
+      },
+      grid: {
+        autonomy: { label: "Autonomia", title: "24/7 Sem Intervenção", desc: "Agentes que respondem a leads e marcam consultas de forma autónoma." },
+        decision: { label: "Decisão", title: "Contexto Real", desc: "Sistemas que aprendem, qualificam compradores e tomam decisões com base em contexto." },
+        ecosystem: { label: "Ecossistema", title: "Integração Total", desc: "Ligamos o CRM, APIs e bases de dados sem substituições caras de software." }
+      },
+      trust: "Deploy via infraestrutura customizada // ROI validado no plano Starter"
+    },
+    problem: {
+      eyebrow: "O diagnóstico",
+      headline: "Reconheces algum disto?",
+      sub: "Estes problemas custam-te tempo, dinheiro e clientes todos os meses.",
+      items: [
+        {
+          title: "Leads sem resposta",
+          desc: "Contactos chegam fora do horário e perdes o negócio porque ninguém responde em menos de 5 minutos.",
+        },
+        {
+          title: "Tarefas repetitivas a engolir o dia",
+          desc: "A tua equipa passa horas em emails, fichas e relatórios que um sistema podia fazer automaticamente.",
+        },
+        {
+          title: "Follow-up inconsistente",
+          desc: "Sem um sistema de acompanhamento, clientes potenciais esquecem-te. E tu esqueces-te deles.",
+        },
+        {
+          title: "CRM sempre desatualizado",
+          desc: "Dados em falta, duplicados ou desatualizados tornam as decisões cegas e o pipeline impossível de gerir.",
+        },
+        {
+          title: "Taxa de faltas fora de controlo",
+          desc: "Cada falta não confirmada é dinheiro perdido. Sem sistema automatizado, a taxa dispara.",
+        },
+        {
+          title: "Escalabilidade bloqueada",
+          desc: "Para crescer, tens de contratar mais pessoas. O negócio escala em headcount, não em lucro.",
+        },
+      ],
+    },
+    shift: {
+      eyebrow: "A revolução silenciosa",
+      headline: "O mundo mudou. A maioria das empresas ainda não percebeu.",
+      sub: "As automações tradicionais fazem o que lhes mandas. Os AI Agents pensam.",
+      old_title: "Automações Tradicionais",
+      new_title: "AI Agents",
+      old: [
+        "Regras fixas — sem contexto",
+        "Falham quando há exceções",
+        "Precisam de supervisão constante",
+        "Não aprendem com o tempo",
+        "Integração limitada",
+      ],
+      new: [
+        "Tomam decisões com contexto real",
+        "Adaptam-se a situações novas",
+        "Trabalham 24/7 sem supervisão",
+        "Melhoram continuamente",
+        "Integram qualquer sistema",
+      ],
+      quote: '"As empresas como a OpenAI, Salesforce e Microsoft estão a vender isto por centenas de milhares. Nós trazemos isso às PMEs."',
+    },
+    services: {
+      eyebrow: "A Arquitetura InneraAI",
+      headline: "Ecossistemas Dinâmicos por Nicho",
+      sub: "Não vendemos automações isoladas. Construímos infraestruturas fechadas onde múltiplos AI Agents colaboram com o teu software para eliminar o trabalho manual.",
+      
+      // Niche 1: Real Estate
+      real_estate: {
+        badge: "Nicho: Imobiliárias",
+        title: "Pipeline de Alta Conversão",
+        roi: "Potencial: +1 negócio/mês = €3k–€15k adicionais.", // From source: 34
+        desc: "Lida com o volume de leads sem perder resposta e gere o follow-up sistemático que os agentes não têm tempo de fazer.", // From sources: 23, 24, 27
+        items: [
+          {
+            icon: "⚡",
+            title: "Agent de Qualificação",
+            desc: "Responde ao lead em <2min, qualifica com perguntas inteligentes e agenda visita no CRM automaticamente." // From source: 29
+          },
+          {
+            icon: "🔄",
+            title: "Agent de Follow-up",
+            desc: "Sequências personalizadas de mensagens pós-visita com base no perfil do comprador." // From source: 30
+          },
+          {
+            icon: "📊",
+            title: "Automação de Fichas",
+            desc: "Extrai dados de emails/docs e preenche o CRM sem intervenção humana, libertando 3-4h/dia aos agentes." // From sources: 31, 24
+          },
+          {
+            icon: "📈",
+            title: "Dashboard de Pipeline",
+            desc: "Visão em tempo real de leads, estado das negociações e geração automática de relatórios semanais." // From sources: 32, 33
+          }
+        ]
+      },
+      
+      // Niche 2: Clinics
+      clinics: {
+        badge: "Nicho: Saúde Privada",
+        title: "Retenção e Otimização de Agenda",
+        roi: "Potencial: Reduzir faltas em 15% = Recuperar €150-€900/dia.", // From source: 50
+        desc: "Elimina a gestão manual de marcações, reduz a taxa crítica de faltas e automatiza o acompanhamento pós-consulta.", // From sources: 39, 40, 41
+        items: [
+          {
+            icon: "🤖",
+            title: "Agent de Marcações",
+            desc: "Chatbot + voz que marca, confirma e reagenda consultas 24/7 sem intervenção humana." // From source: 45
+          },
+          {
+            icon: "🔔",
+            title: "Sequência Anti-Falta",
+            desc: "Lembretes automáticos por SMS/WhatsApp/email com confirmação obrigatória para baixar os 15-30% de no-shows." // From sources: 46, 39
+          },
+          {
+            icon: "❤️",
+            title: "Agent de Follow-up Clínico",
+            desc: "Mensagens personalizadas pós-consulta com recomendações e convite para nova marcação, aumentando a retenção." // From source: 47
+          },
+          {
+            icon: "📋",
+            title: "Onboarding Inteligente",
+            desc: "Recolha de dados automática antes da primeira consulta via formulário e Dashboard Clínico em tempo real." // From sources: 48, 49
+          }
+        ]
+      }
+    },
+    tools: {
+      eyebrow: "Integração Perfeita",
+      headline: "O Nosso Ecossistema Técnico",
+      sub: "Conectamos os teus sistemas existentes aos nossos AI Agents. Sem migrações dolorosas, sem curvas de aprendizagem.",
+      categories: [
+        { label: "LLMs & Raciocínio", items: ["OpenAI GPT-4o", "Claude 3.5", "Gemini Pro"] },
+        { label: "Voice & AI Agents", items: ["ElevenLabs", "Retell AI", "VAPI"] },
+        { label: "Bases de Dados & CRM", items: ["Salesforce", "HubSpot", "Supabase", "Notion"] },
+        { label: "Orquestração & Automação", items: ["n8n", "Make", "Zapier"] }
+      ],
+      // New translation string for the bottom banner
+      banner: "Implementação 100% customizada às necessidades do cliente."
+    },
+    process: {
+      eyebrow: "O nosso processo",
+      headline: "Do diagnóstico à implementação em semanas, não meses.",
+      sub: "Um processo estruturado que garante resultados mensuráveis desde a primeira semana.",
+      steps: [
+        {
+          number: "01",
+          title: "Diagnóstico",
+          desc: "Auditoria gratuita de 30 minutos para mapear os processos com maior impacto. Identificamos onde a IA cria mais valor imediato.",
+        },
+        {
+          number: "02",
+          title: "Arquitetura",
+          desc: "Desenhamos a solução específica para o teu negócio. Nada genérico — cada sistema é construído à medida dos teus processos.",
+        },
+        {
+          number: "03",
+          title: "Implementação",
+          desc: "Construímos e integramos os AI Agents com os teus sistemas existentes. Sem substituições caras, sem disrupção.",
+        },
+        {
+          number: "04",
+          title: "Otimização Contínua",
+          desc: "Monitorizamos, medimos e melhoramos. O sistema evolui com o teu negócio. Tu decides o ritmo.",
+        },
+      ],
+    },
+    authority: {
+      eyebrow: "Porquê a InneraAI",
+      headline: "Não somos consultores. Somos construtores.",
+      sub: "A diferença entre uma agência que fala de IA e uma que a implementa é o que estás a construir.",
+      pillars: [
+        {
+          title: "Especialização Setorial",
+          desc: "Imobiliárias e clínicas são os nossos nichos. Conhecemos os processos, os problemas e as soluções que funcionam.",
+        },
+        {
+          title: "Implementação Completa",
+          desc: "Não entregamos decks PowerPoint. Entregamos sistemas funcionais integrados nos teus fluxos de trabalho.",
+        },
+        {
+          title: "ROI Mensurável",
+          desc: "Cada projeto começa com métricas de sucesso definidas. Sabes exatamente o que vais ganhar.",
+        },
+        {
+          title: "Parceria, não fornecedor",
+          desc: "Reuniões regulares, relatórios de impacto, otimização contínua. Crescemos quando tu cresces.",
+        },
+      ],
+    },
+    results: {
+      eyebrow: "O que os clientes ganham",
+      headline: "Resultados concretos, não promessas.",
+      sub: "Estes são os indicadores que os nossos clientes monitorizam depois da implementação.",
+      metrics: [
+        { value: "80%", label: "Redução de faltas em clínicas", desc: "Com sequências automáticas de confirmação" },
+        { value: "<2min", label: "Tempo de resposta a leads", desc: "Vs. horas ou dias sem sistema" },
+        { value: "3-4h", label: "Poupadas por agente/dia", desc: "Em tarefas administrativas automatizadas" },
+        { value: "24/7", label: "Operação sem interrupção", desc: "Sem custos de hora extra ou turnos" },
+      ],
+    },
+    cta_banner: {
+      headline: "Quanto está a custar-te não ter isto?",
+      sub: "Cada mês sem sistema é receita perdida, tempo desperdiçado e clientes que foram para a concorrência.",
+      cta: "Agendar Auditoria Gratuita",
+    },
+    form: {
+      eyebrow: "Qualificação",
+      headline: "Vamos ver se fazemos sentido juntos.",
+      sub: "Preenche este formulário para que possamos preparar a melhor estratégia para a tua empresa antes da chamada.",
+      fields: {
+        name: "Nome completo",
+        email: "Email profissional",
+        phone: "Telemóvel / WhatsApp",
+        company: "Nome da empresa",
+        sector: "Setor de negócio",
+        sector_options: [
+          { value: "real_estate", label: "Imobiliária / Gestão de Propriedades" },
+          { value: "clinic", label: "Clínica / Saúde Privada" },
+          { value: "other", label: "Outro" },
+        ],
+        size: "Dimensão da equipa",
+        size_options: [
+          { value: "1-5", label: "1 a 5 pessoas" },
+          { value: "6-20", label: "6 a 20 pessoas" },
+          { value: "21-50", label: "21 a 50 pessoas" },
+          { value: "50+", label: "Mais de 50 pessoas" },
+        ],
+        challenge: "Principal desafio atual",
+        challenge_options: [
+          { value: "leads", label: "Gestão e qualificação de leads" },
+          { value: "followup", label: "Follow-up e retenção de clientes" },
+          { value: "admin", label: "Tarefas administrativas repetitivas" },
+          { value: "noshow", label: "Taxa de faltas elevada" },
+          { value: "reporting", label: "Reporting e visibilidade do negócio" },
+          { value: "scaling", label: "Escalabilidade sem contratar mais" },
+        ],
+        timeline: "Quando precisas de uma solução?",
+        timeline_options: [
+          { value: "urgent", label: "Urgente — nas próximas 4 semanas" },
+          { value: "soon", label: "Breve — 1 a 3 meses" },
+          { value: "planning", label: "Estou a planear — 3 a 6 meses" },
+          { value: "exploring", label: "Só a explorar por agora" },
+        ],
+        current_tools: "Que ferramentas usas atualmente? (CRM, software de gestão, etc.)",
+        current_tools_placeholder: "Ex: HubSpot, Pipedrive, software de clínica, Excel...",
+        revenue: "Volume de negócio mensal (aproximado)",
+        revenue_options: [
+          { value: "under10k", label: "Menos de €10k/mês" },
+          { value: "10k-50k", label: "€10k a €50k/mês" },
+          { value: "50k-200k", label: "€50k a €200k/mês" },
+          { value: "over200k", label: "Mais de €200k/mês" },
+        ],
+        source: "Como chegaste até nós?",
+        source_options: [
+          { value: "linkedin", label: "LinkedIn" },
+          { value: "referral", label: "Recomendação" },
+          { value: "google", label: "Pesquisa Google" },
+          { value: "social", label: "Redes Sociais" },
+          { value: "other", label: "Outro" },
+        ],
+        context: "Descreve brevemente o que gostavas de automatizar ou melhorar",
+        context_placeholder: "Quanto mais específico fores, mais preparados chegamos à chamada...",
+        submit: "Submeter e Agendar Chamada",
+        submitting: "A enviar...",
+      },
+      success: {
+        title: "Recebemos o teu pedido.",
+        desc: "A nossa equipa vai analisar as tuas respostas e entrar em contacto em menos de 24 horas para agendar a chamada de diagnóstico.",
+        note: "Verifica o teu email (incluindo spam).",
+      },
+      required: "Campo obrigatório",
+    },
+    footer: {
+      tagline: "O sistema nervoso de IA da tua empresa.",
+      links: ["Início", "Serviços", "Processo", "Formulário"],
+      legal: "Todos os direitos reservados.",
+    },
+  },
+
+  en: {
+    nav: {
+      cta: "Book a Call",
+    },
+    hero: {
+      badge: "AI Infrastructure for SMEs",
+      headline1: "Your business is",
+      headline2: "leaving money",
+      headline3: "on the table.",
+      sub: "We install your business's AI nervous system — so your team spends less time on operations and more on what matters.",
+      cta_primary: "Learn More",
+      cta_secondary: "See how it works",
+      niches: ["Real Estate", "Clinics", "Growing SMEs"],
+      status: "System Online // Agents Active",
+      card_real_estate: {
+        label: "Real Estate",
+        agent: "Lead Qual. Agent",
+        metric: "<2min",
+        sub: "Response"
+      },
+      card_clinics: {
+        label: "Clinics",
+        agent: "Booking Agent",
+        metric: "-30%",
+        sub: "No-shows"
+      },
+      grid: {
+        autonomy: { label: "Autonomy", title: "24/7 Autonomous", desc: "Agents that handle leads and bookings around the clock without help." },
+        decision: { label: "Decision", title: "Real Context", desc: "Systems that learn, qualify buyers, and make decisions based on context." },
+        ecosystem: { label: "Ecosystem", title: "Full Integration", desc: "Connecting CRMs, APIs, and databases without expensive software swaps." }
+      },
+      trust: "Custom infrastructure deployment // ROI validated on Starter plan"
+    },
+    problem: {
+      eyebrow: "The diagnosis",
+      headline: "Does any of this sound familiar?",
+      sub: "These problems are costing you time, money and clients every single month.",
+      items: [
+        {
+          title: "Unanswered leads",
+          desc: "Contacts come in after hours and you lose the deal because no one responds within 5 minutes.",
+        },
+        {
+          title: "Repetitive tasks eating your day",
+          desc: "Your team spends hours on emails, forms and reports that a system could handle automatically.",
+        },
+        {
+          title: "Inconsistent follow-up",
+          desc: "Without a tracking system, potential clients forget you. And you forget them.",
+        },
+        {
+          title: "CRM always outdated",
+          desc: "Missing, duplicate or outdated data makes decisions blind and your pipeline impossible to manage.",
+        },
+        {
+          title: "No-show rate out of control",
+          desc: "Each unconfirmed no-show is lost money. Without an automated system, the rate skyrockets.",
+        },
+        {
+          title: "Growth blocked by headcount",
+          desc: "To grow, you have to hire more people. The business scales in headcount, not in profit.",
+        },
+      ],
+    },
+    shift: {
+      eyebrow: "The silent revolution",
+      headline: "The world changed. Most businesses haven't noticed yet.",
+      sub: "Traditional automations do what you tell them. AI Agents think.",
+      old_title: "Traditional Automations",
+      new_title: "AI Agents",
+      old: [
+        "Fixed rules — no context",
+        "Fail when exceptions arise",
+        "Need constant supervision",
+        "Don't learn over time",
+        "Limited integrations",
+      ],
+      new: [
+        "Make decisions with real context",
+        "Adapt to new situations",
+        "Work 24/7 unsupervised",
+        "Continuously improve",
+        "Integrate any system",
+      ],
+      quote: '"Companies like OpenAI, Salesforce and Microsoft are selling this for hundreds of thousands. We bring it to SMEs."',
+    },
+    services: {
+      eyebrow: "What we build",
+      headline: "Sector-specific solutions",
+      sub: "We are not a generic agency. We specialize in two sectors where AI has the highest immediate impact.",
+      real_estate: {
+        badge: "Real Estate",
+        title: "Turn leads into closed deals",
+        desc: "An AI ecosystem that qualifies, follows up and converts — while your team focuses on what matters.",
+        items: [
+          {
+            icon: "⚡",
+            title: "Qualification Agent",
+            desc: "Responds in <2 minutes, qualifies with intelligent questions and books visits into your CRM automatically.",
+          },
+          {
+            icon: "🔄",
+            title: "Follow-up Sequences",
+            desc: "Personalized post-visit messages based on buyer profile. Zero manual work.",
+          },
+          {
+            icon: "📋",
+            title: "Auto CRM Population",
+            desc: "Extracts data from emails and documents. CRM always updated without human input.",
+          },
+          {
+            icon: "📊",
+            title: "Pipeline Dashboard",
+            desc: "Real-time view of leads, deals and close predictions. Decisions backed by data.",
+          },
+        ],
+      },
+      clinics: {
+        badge: "Clinics & Private Health",
+        title: "Fewer no-shows, more patients, more revenue",
+        desc: "AI systems that reduce no-shows, automate bookings and build lasting patient relationships.",
+        items: [
+          {
+            icon: "📅",
+            title: "24/7 Booking Agent",
+            desc: "Chatbot + voice that books, confirms and reschedules at any hour. No receptionist needed.",
+          },
+          {
+            icon: "📱",
+            title: "No-Show Prevention",
+            desc: "Automatic reminders via SMS/WhatsApp/email with mandatory confirmation. Up to 80% fewer no-shows.",
+          },
+          {
+            icon: "💬",
+            title: "Clinical Follow-up",
+            desc: "Personalized post-consultation messages with recommendations and rebooking invitations.",
+          },
+          {
+            icon: "📈",
+            title: "Clinical Dashboard",
+            desc: "Doctor occupancy, no-show rate, revenue by specialty — in real time.",
+          },
+        ],
+      },
+    },
+    tools: {
+      eyebrow: "Tech stack",
+      headline: "The tools we implement",
+      sub: "We work with the best AI and automation ecosystem available on the market.",
+      categories: [
+        { label: "Automation", items: ["n8n", "Make", "Zapier"] },
+        { label: "AI", items: ["OpenAI GPT-4", "Claude AI", "Gemini", "Mistral"] },
+        { label: "Communication", items: ["WhatsApp API", "Twilio", "SendGrid", "Mailchimp"] },
+        { label: "CRM", items: ["HubSpot", "Salesforce", "Pipedrive", "Monday.com"] },
+        { label: "Data", items: ["Supabase", "Airtable", "PostgreSQL", "Notion"] },
+        { label: "Voice", items: ["ElevenLabs", "Retell AI", "VAPI", "Bland AI"] },
+      ],
+    },
+    process: {
+      eyebrow: "Our process",
+      headline: "From diagnosis to implementation in weeks, not months.",
+      sub: "A structured process that guarantees measurable results from week one.",
+      steps: [
+        {
+          number: "01",
+          title: "Diagnosis",
+          desc: "Free 30-minute audit to map the highest-impact processes. We identify where AI creates the most immediate value.",
+        },
+        {
+          number: "02",
+          title: "Architecture",
+          desc: "We design the solution specific to your business. Nothing generic — each system is built around your processes.",
+        },
+        {
+          number: "03",
+          title: "Implementation",
+          desc: "We build and integrate AI Agents with your existing systems. No expensive replacements, no disruption.",
+        },
+        {
+          number: "04",
+          title: "Continuous Optimization",
+          desc: "We monitor, measure and improve. The system evolves with your business. You set the pace.",
+        },
+      ],
+    },
+    authority: {
+      eyebrow: "Why InneraAI",
+      headline: "We are not consultants. We are builders.",
+      sub: "The difference between an agency that talks about AI and one that actually implements it.",
+      pillars: [
+        {
+          title: "Sector Specialization",
+          desc: "Real estate and clinics are our niches. We know the processes, problems and solutions that work.",
+        },
+        {
+          title: "Full Implementation",
+          desc: "We don't deliver PowerPoint decks. We deliver functional systems integrated into your workflows.",
+        },
+        {
+          title: "Measurable ROI",
+          desc: "Every project starts with defined success metrics. You know exactly what you're going to gain.",
+        },
+        {
+          title: "Partnership, not vendor",
+          desc: "Regular meetings, impact reports, continuous optimization. We grow when you grow.",
+        },
+      ],
+    },
+    results: {
+      eyebrow: "What clients gain",
+      headline: "Real results, not promises.",
+      sub: "These are the indicators our clients track after implementation.",
+      metrics: [
+        { value: "80%", label: "Reduction in clinic no-shows", desc: "With automatic confirmation sequences" },
+        { value: "<2min", label: "Lead response time", desc: "Vs. hours or days without a system" },
+        { value: "3-4h", label: "Saved per agent/day", desc: "In automated administrative tasks" },
+        { value: "24/7", label: "Uninterrupted operation", desc: "No overtime costs or shifts" },
+      ],
+    },
+    cta_banner: {
+      headline: "How much is NOT having this costing you?",
+      sub: "Every month without a system is lost revenue, wasted time and clients that went to the competition.",
+      cta: "Book Free Audit",
+    },
+    form: {
+      eyebrow: "Qualification",
+      headline: "Let's see if we make sense together.",
+      sub: "Fill in this form so we can prepare the best strategy for your business before the call.",
+      fields: {
+        name: "Full name",
+        email: "Professional email",
+        phone: "Phone / WhatsApp",
+        company: "Company name",
+        sector: "Business sector",
+        sector_options: [
+          { value: "real_estate", label: "Real Estate / Property Management" },
+          { value: "clinic", label: "Clinic / Private Health" },
+          { value: "other", label: "Other" },
+        ],
+        size: "Team size",
+        size_options: [
+          { value: "1-5", label: "1 to 5 people" },
+          { value: "6-20", label: "6 to 20 people" },
+          { value: "21-50", label: "21 to 50 people" },
+          { value: "50+", label: "More than 50 people" },
+        ],
+        challenge: "Main current challenge",
+        challenge_options: [
+          { value: "leads", label: "Lead management and qualification" },
+          { value: "followup", label: "Follow-up and client retention" },
+          { value: "admin", label: "Repetitive administrative tasks" },
+          { value: "noshow", label: "High no-show rate" },
+          { value: "reporting", label: "Reporting and business visibility" },
+          { value: "scaling", label: "Scaling without hiring more" },
+        ],
+        timeline: "When do you need a solution?",
+        timeline_options: [
+          { value: "urgent", label: "Urgent — within 4 weeks" },
+          { value: "soon", label: "Soon — 1 to 3 months" },
+          { value: "planning", label: "Planning — 3 to 6 months" },
+          { value: "exploring", label: "Just exploring for now" },
+        ],
+        current_tools: "What tools do you currently use? (CRM, management software, etc.)",
+        current_tools_placeholder: "E.g.: HubSpot, Pipedrive, clinic software, Excel...",
+        revenue: "Monthly business volume (approximate)",
+        revenue_options: [
+          { value: "under10k", label: "Under €10k/month" },
+          { value: "10k-50k", label: "€10k to €50k/month" },
+          { value: "50k-200k", label: "€50k to €200k/month" },
+          { value: "over200k", label: "Over €200k/month" },
+        ],
+        source: "How did you find us?",
+        source_options: [
+          { value: "linkedin", label: "LinkedIn" },
+          { value: "referral", label: "Referral" },
+          { value: "google", label: "Google Search" },
+          { value: "social", label: "Social Media" },
+          { value: "other", label: "Other" },
+        ],
+        context: "Briefly describe what you'd like to automate or improve",
+        context_placeholder: "The more specific you are, the more prepared we arrive to the call...",
+        submit: "Submit & Book Call",
+        submitting: "Sending...",
+      },
+      success: {
+        title: "We've received your request.",
+        desc: "Our team will review your answers and reach out within 24 hours to schedule the diagnostic call.",
+        note: "Check your email (including spam).",
+      },
+      required: "Required field",
+    },
+    footer: {
+      tagline: "The AI nervous system of your business.",
+      links: ["Home", "Services", "Process", "Form"],
+      legal: "All rights reserved.",
+    },
+  },
+} as const;
+
+export type ContentShape = typeof content.pt & typeof content.en;
