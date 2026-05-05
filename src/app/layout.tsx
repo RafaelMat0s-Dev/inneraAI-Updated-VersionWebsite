@@ -1,22 +1,20 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
+import { Syne, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/language-context";
 
-// Plus Jakarta Sans: Extremely premium, high-legibility B2B font. 
-// It has the geometric sharpness of a tech company but the readability of an editorial site.
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const syne = Syne({
+  variable: "--font-syne",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700", "800"],
 });
 
-// JetBrains Mono: The gold standard for actual developers. 
-// Using this for your metrics, badges, and technical terms instantly builds subconscious authority.
-const jetbrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains",
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
   subsets: ["latin"],
   display: "swap",
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -37,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className={`${jakarta.variable} ${jetbrainsMono.variable} scroll-smooth`}>
+    <html lang="pt" className={`${syne.variable} ${ibmPlexMono.variable} scroll-smooth`}>
       <body className="font-sans antialiased bg-[#0A0A0A] text-white selection:bg-[oklch(0.62_0.26_255_/_30%)] selection:text-white">
         <LanguageProvider>{children}</LanguageProvider>
       </body>

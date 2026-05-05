@@ -11,79 +11,112 @@ export function Results() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
 
+  const accentColors = [
+    "oklch(0.72 0.20 255)",
+    "oklch(0.65 0.24 290)",
+    "oklch(0.70 0.22 155)",
+    "oklch(0.75 0.18 195)",
+  ];
+
   return (
-    <section ref={ref} className="relative py-28 px-6">
-      <div className="max-w-5xl mx-auto">
+    <section ref={ref} id="resultados" className="relative py-28 px-6 z-10">
+      <div className="max-w-6xl mx-auto">
+
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: EASE }}
-          className="text-center mb-16"
+          className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16 pb-12 border-b border-white/5"
         >
-          <span
-            className="text-xs font-medium tracking-widest uppercase mb-4 block"
-            style={{ color: "oklch(0.75 0.18 195)", letterSpacing: "0.15em" }}
+          <div>
+            <span
+              className="block font-mono text-[10px] font-bold tracking-widest uppercase mb-4"
+              style={{ color: "oklch(0.72 0.20 255)" }}
+            >
+              {t.results.eyebrow}
+            </span>
+            <h2
+              className="font-bold leading-tight tracking-tight"
+              style={{ fontSize: "clamp(2.2rem, 4.5vw, 3.8rem)", color: "oklch(0.96 0.006 255)" }}
+            >
+              {t.results.headline}
+            </h2>
+          </div>
+          <p
+            className="text-base leading-relaxed md:max-w-xs md:text-right"
+            style={{ color: "oklch(0.60 0.025 255)" }}
           >
-            {t.results.eyebrow}
-          </span>
-          <h2
-            className="font-bold leading-tight mb-4"
-            style={{ fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "oklch(0.96 0.006 255)" }}
-          >
-            {t.results.headline}
-          </h2>
-          <p style={{ color: "oklch(0.60 0.025 255)" }}>{t.results.sub}</p>
+            {t.results.sub}
+          </p>
         </motion.div>
 
-        {/* Metrics grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Large metric cards grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
           {t.results.metrics.map((metric, i) => (
             <motion.div
               key={metric.label}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 32 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: 0.1 + i * 0.1, ease: EASE }}
-              className="relative p-6 rounded-2xl text-center overflow-hidden group"
+              transition={{ duration: 0.6, delay: 0.08 * i, ease: EASE }}
+              className="relative p-7 lg:p-8 rounded-3xl overflow-hidden group"
               style={{
-                background: "oklch(0.10 0.014 262 / 60%)",
-                border: "1px solid oklch(1 0 0 / 8%)",
+                background: "oklch(0.09 0.013 261 / 70%)",
+                border: "1px solid oklch(1 0 0 / 7%)",
               }}
             >
-              {/* Top glow on hover */}
+              {/* Hover glow from top */}
               <div
-                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl pointer-events-none"
-                style={{ background: "radial-gradient(circle at 50% 0%, oklch(0.62 0.26 255 / 8%) 0%, transparent 70%)" }}
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-3xl"
+                style={{ background: `radial-gradient(ellipse at 50% 0%, color-mix(in oklch, ${accentColors[i]} 12%, transparent) 0%, transparent 65%)` }}
               />
+              {/* Top border accent on hover */}
               <div
-                className="absolute top-0 left-0 right-0 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{ background: "linear-gradient(90deg, transparent, oklch(0.62 0.26 255 / 60%), transparent)" }}
+                className="absolute top-0 left-4 right-4 h-px opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{ background: `linear-gradient(90deg, transparent, ${accentColors[i]}, transparent)` }}
               />
 
-              <div className="relative">
+              <div className="relative z-10">
+                {/* Large value */}
                 <div
-                  className="font-bold mb-2 tabular-nums"
+                  className="font-bold tabular-nums leading-none mb-4"
                   style={{
-                    fontSize: "clamp(2rem, 4vw, 2.8rem)",
-                    color: "oklch(0.62 0.26 255)",
-                    lineHeight: 1,
+                    fontSize: "clamp(2.6rem, 5vw, 4rem)",
+                    color: accentColors[i],
+                    letterSpacing: "-0.02em",
                   }}
                 >
                   {metric.value}
                 </div>
+
+                {/* Label */}
                 <div
-                  className="font-medium text-sm mb-2 leading-tight"
-                  style={{ color: "oklch(0.85 0.010 255)" }}
+                  className="font-semibold text-sm leading-snug mb-2"
+                  style={{ color: "oklch(0.88 0.008 255)" }}
                 >
                   {metric.label}
                 </div>
-                <div className="text-xs" style={{ color: "oklch(0.50 0.018 255)" }}>
+
+                {/* Description */}
+                <div
+                  className="text-xs leading-relaxed"
+                  style={{ color: "oklch(0.50 0.018 255)" }}
+                >
                   {metric.desc}
                 </div>
+              </div>
+
+              {/* Corner index number */}
+              <div
+                className="absolute top-5 right-5 font-mono text-[10px] font-bold tabular-nums"
+                style={{ color: "oklch(0.30 0.015 255)" }}
+              >
+                0{i + 1}
               </div>
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );
